@@ -1,3 +1,13 @@
+<!--
+    activity_one_page.xml - Prolific
+
+    Language:        Java
+    Platform:        Android SDK
+    Author:          Rupan Talwar, Email:rupantalwar@gmail.com, Phone: 315 751-2860
+    Created On:      1/23/2015
+-->
+
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -38,15 +48,13 @@
 
         <ImageButton
             android:id="@+id/rightButton"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:scaleType="fitCenter"
-
             android:contentDescription="@string/content1"
             android:src="@drawable/zappos1" />
 

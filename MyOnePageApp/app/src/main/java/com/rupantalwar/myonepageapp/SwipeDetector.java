@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                        //
-//  ScreenDetector.java - Prolific                                                        //
+//  ScreenDetector.java - MyOnePageApp                                                    //
 //  (Source file containing ScreenDetector class used for defining custom swipe gesture   //
 //   in a single listView item)                                                           //
 //                                                                                        //
 //  Language:        Java                                                                 //
 //  Platform:        Android SDK                                                          //
 //  Author:          Rupan Talwar, Email:rupantalwar@gmail.com, Phone: 315 751-2860       //
-//  Created On:      1/9/2015                                                             //
+//  Created On:      1/23/2015                                                            //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 package com.rupantalwar.myonepageapp;

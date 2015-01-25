@@ -1,3 +1,14 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                        //
+//  OnePage.java - MyOnePageApp                                                           //
+//  (Source file containing OnePage class, the main and only page of the app              //
+//                                                                                        //
+//  Language:        Java                                                                 //
+//  Platform:        Android SDK                                                          //
+//  Author:          Rupan Talwar, Email:rupantalwar@gmail.com, Phone: 315 751-2860       //
+//  Created On:      1/23/2015                                                            //
+////////////////////////////////////////////////////////////////////////////////////////////
+
 package com.rupantalwar.myonepageapp;
 
 import android.app.Activity;
@@ -7,21 +18,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ShareActionProvider;
-import android.widget.TextView;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class OnePage extends Activity {
@@ -34,6 +39,7 @@ public class OnePage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_page);
 
+        //Declaring Imagebuttons or tiles that display on the main page
         final ImageButton imgButton;
         final ImageButton lnButton;
         final ImageButton gitButton;
@@ -58,11 +64,8 @@ public class OnePage extends Activity {
             @Override
             public void onClick(View view) {
 
-                Log.d("APP","onClick");
-
                 if (swipeDetector.swipeDetected())
                 {
-
                     //do the onSwipe Right-to-Left action
                     Display display = getWindowManager().getDefaultDisplay();
 
@@ -86,18 +89,17 @@ public class OnePage extends Activity {
                         }
                     });
                     imgButton.startAnimation(translateAnim);
-
                 }
 
                 else
                 {
                     imgButton.setImageResource(R.drawable.rupan);
-
                 }
             }
 
         });
 
+        //Setting up on click event for the FB button
         fbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +111,7 @@ public class OnePage extends Activity {
 
         });
 
+        //Setting up on click event for the Github button
         gitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,6 +123,7 @@ public class OnePage extends Activity {
 
         });
 
+        //Setting up on click event for the LinkedIn button
         lnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,19 +135,17 @@ public class OnePage extends Activity {
 
         });
 
-
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                 final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(OnePage.this);
                 alertDialogBuilder.setTitle("About this App");
                 alertDialogBuilder
-                        .setMessage("* Tiles-like display" + "\n" +
+                        .setMessage("* Dynamic Tiles UI" + "\n" +
                                 "* Swipe left on my image to know more about me" + "\n" +
-                                "* Click on Zappos tile to uncover more images"  + "\n" +
-                                "* Click on ? to launch a timed alert box")
+                                "* Click on the Zappos Tile to uncover more images"  + "\n" +
+                                "* Click on ? Tile to launch a timed app info box")
                         .setCancelable(false);
                 final AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
@@ -171,10 +173,12 @@ public class OnePage extends Activity {
 
         });
 
+        //Creating an array of images
         final int[] image = { R.drawable.zappos2, R.drawable.zappos3,
-                R.drawable.zappos4};
+                R.drawable.zappos1};
 
 
+        //Displaying array images on button-click
         rightButton.setOnClickListener(new View.OnClickListener() {
             int i;
             @Override
@@ -225,7 +229,6 @@ public class OnePage extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
 
         return super.onOptionsItemSelected(item);
